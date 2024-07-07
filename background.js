@@ -16,6 +16,7 @@ function updateBadgeForTab(tabId) {
   });
 }
 
+// This is the background script for the extension. It listens for messages from the content script
 chrome.runtime.onMessage.addListener((message, sender) => {
   if (message.type === 'updateBadge') {
     let volumePercentage = Math.round(message.volume * 100).toString();
